@@ -30,7 +30,7 @@ struct LocalToursDatasource: ToursRepository {
                     
                 ),
                 Stop(name: "waypoint01", description: "Just a waypoint", emoji: "📚", sensorId: "8cc2e0a06f1666b863df2ea773e7ad02", nextStopDirection: .pi/4, imageName: nil, isWaypoint: true), // norte,
-                Stop(name: "Biblioteca", description: "Biblioteca de la UVG.", emoji: "📚", sensorId: "fd7d34c180ba4e9610a4439cd205712c", nextStopDirection: .pi/4, imageName: nil), // norte
+                Stop(name: "Biblioteca", description: "Biblioteca de la UVG.", emoji: "📚", sensorId: "fd7d34c180ba4e9610a4439cd205712c", nextStopDirection: .pi/4, imageName: nil, interestPoints: []), // norte
                 
 //                Stop(name: "Canchas", description: "Canchas deportivas de la UVG", emoji: "🎾", sensorId: "fd7d34c180ba4e9610a4439cd205712c", nextStopDirection: .pi, imageName: nil), // sur
             ]),
@@ -65,7 +65,6 @@ struct LocalToursDatasource: ToursRepository {
                 emoji: "📚",
                 sensorId: "4056668d19dfe5fab47c9e83c82a982b", nextStopDirection: .pi/4 + .pi/12, // osete
                 imageName: "salonN"
-                
             ),
             Stop(
                 name: "Escritorio",
@@ -74,10 +73,71 @@ struct LocalToursDatasource: ToursRepository {
                 emoji: "",
                 sensorId: "8cc2e0a06f1666b863df2ea773e7ad02", nextStopDirection: .pi/2 + .pi/4 + .pi/12, // osete
                 imageName: nil,
+                interestPoints: [
+                    InterestPoint(name: "Salon J", distance: 5)
+                ],
                 isWaypoint: true
+
             ),
             Stop(name: "Salon Silencioso", description: "El salón silencioso en la biblioteca del CIT en la Universidad del Valle de Guatemala está diseñado para quienes buscan un entorno de estudio completamente libre de distracciones. Con un ambiente minimalista y luz tenue, el espacio está equipado con mesas individuales y sillas ergonómicas, donde se fomenta la concentración profunda y el trabajo en silencio absoluto. Los dispositivos electrónicos deben ser usados en modo silencioso, y el respeto por el entorno tranquilo es primordial. Es el lugar perfecto para realizar lecturas intensas, escribir o preparar exámenes en un entorno de total calma.", emoji: "🤫", sensorId: "fd7d34c180ba4e9610a4439cd205712c", nextStopDirection: 0,
                 imageName: "silenciosoBiblio"),
+        
+        ]),
+        
+        Tour(id: "4", name: "Cafeteria", description: "Demo en la cafeteria", duration: .seconds(60 * 5), stops: [
+            Stop(
+                name: "Mixtas Frankfurt",
+                description: """
+                Restaurante de Mixtas.
+                """,
+                emoji: "🌭",
+                sensorId: "4056668d19dfe5fab47c9e83c82a982b", nextStopDirection: -.pi/2, // osete
+                imageName: "salonN"
+            ),
+            Stop(
+                name: "Escritorio",
+                description: """
+                """,
+                emoji: "",
+                sensorId: "8cc2e0a06f1666b863df2ea773e7ad02", nextStopDirection: .pi, // osete
+                imageName: nil,
+                interestPoints: [
+                    InterestPoint(name: "Salon J", distance: 2)
+                ],
+                isWaypoint: true
+
+            ),
+            Stop(name: "Cafe Gitane", description: "Lugar relajante para tomar un cafe", emoji: "☕️", sensorId: "fd7d34c180ba4e9610a4439cd205712c", nextStopDirection: 0,
+                imageName: "silenciosoBiblio", interestPoints: [
+                    InterestPoint(name: "Sillas", distance: 2)
+                ]),
+        
+        ]),
+        Tour(id: "5", name: "Lab Realidad Virtual", description: "Demo en el lab", duration: .seconds(60 * 5), stops: [
+            Stop(
+                name: "Casilleros",
+                description: """
+                Puedes guardar aquí tus pertenencias.
+                """,
+                emoji: "🎒",
+                sensorId: "4056668d19dfe5fab47c9e83c82a982b", nextStopDirection: .pi/2,
+                imageName: "casilleros"
+            ),
+            Stop(
+                name: "",
+                description: """
+                """,
+                emoji: "",
+                sensorId: "8cc2e0a06f1666b863df2ea773e7ad02", nextStopDirection: .pi + .pi/6,
+                imageName: nil,
+                interestPoints: [
+                    InterestPoint(name: "Virtualizer 2", distance: 2)
+                ],
+                isWaypoint: true
+
+            ),
+            Stop(name: "Pizarrones", description: "Describe tus mejores ideas", emoji: "💡", sensorId: "fd7d34c180ba4e9610a4439cd205712c", nextStopDirection: 0,
+                imageName: "pizarrones"),
         
         ])
         

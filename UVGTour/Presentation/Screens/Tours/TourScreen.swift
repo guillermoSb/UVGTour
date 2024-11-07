@@ -48,13 +48,25 @@ struct TourScreen: View {
             .padding(Sizes.p24)
             .padding(.top, 100)
             
+            if let interestPoint = tourViewModel.interestPoint {
+                InterestPointView(name: interestPoint.name)
+                      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                      .padding()
+                      .offset(y: 150)
+            }
+            
+            
             VStack(spacing: Sizes.p12) {
                 Image("uvg")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
                 Spacer()
-                if let distanceToStopSensor = tourViewModel.distanceToStopSensor {
+                if let distanceToClosest = tourViewModel.distanceToClosest {
+                    Text("\(distanceToClosest)")
+                }
+                
+                if let distanceToStopSensor = tourViewModel.distanceToStopSensor, tourselection.selectedTour != nil {
                     DistanceIndicatorView(distance: distanceToStopSensor )
                         .offset(y: Sizes.p24)
                         .opacity(tourViewModel.tour.completed ? 0 : 1)

@@ -62,6 +62,28 @@ struct Tour: Identifiable, Equatable {
         return stop.nextStopDirection
     }
     
+    /// Gets an interest point to a sensor if the user is near it
+    func getInterestPoint(sensorId: String, distance: Float) -> InterestPoint? {
+        // Get stop with that sensorId
+        guard let stop = self.stops.first(where: { stop in
+            stop.sensorId == sensorId
+        }) else { return nil }
+        let interestPoints = stop.interestPoints.sorted { i1, i2 in
+            distance - i1.distance < distance - i2.distance
+        }
+        // Get the closest interest point in a range of +- 0.5m
+        guard let firstInterestPoint = interestPoints.first else {return nil}
+        let distanceToInterestPoint = abs(distance - firstInterestPoint.distance)
+        if distanceToInterestPoint <= 0.5 {
+            return firstInterestPoint
+        }
+        if stop.completed {
+            return nil
+        }
+        return nil
+            
+    }
+    
     
     /// Marks a ``Stop`` as completed.
     mutating func completeStop() {
@@ -95,6 +117,7 @@ struct Stop: Identifiable, Equatable {
     let sensorId: String
     let nextStopDirection: Float // Direction to the next stop in radians. 0 indicates the north and pi is south. Counter clock wise
     let imageName: String?
+    var interestPoints: [InterestPoint] = []
     private(set) var completed: Bool = false
     private(set) var visited: Bool = false
     private(set) var isWaypoint: Bool = false // A waypoint is a stop that does not show extra information to the tour.
@@ -109,4 +132,11 @@ struct Stop: Identifiable, Equatable {
     mutating func visit() {
         self.visited = true
     }
+}
+
+
+struct InterestPoint: Identifiable, Equatable {
+    var id: String { name }
+    let name: String
+    let distance: Float
 }

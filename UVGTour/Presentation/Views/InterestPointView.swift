@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct InterestPointView: View {
+    let name: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: "mappin")
+            Text(name)
+        }
+        .foregroundStyle(.black)
+        .font(.caption2)
+        .fontWeight(.semibold)
+        .padding(.vertical, Sizes.p8)
+        .frame(width: 100)
+        .background(.white)
+        .cornerRadius(Sizes.p12)
     }
 }
 
 #Preview {
-    InterestPointView()
+
+    ZStack {
+        Color.gray.ignoresSafeArea()
+        InterestPointView(name: "Salon J")
+    }
 }

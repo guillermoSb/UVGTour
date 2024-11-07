@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		702BBA572C8125460017C722 /* ARTourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BBA562C8125460017C722 /* ARTourView.swift */; };
+		70410AAB2CCB1155009A0546 /* InterestPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70410AAA2CCB1155009A0546 /* InterestPointView.swift */; };
 		704D30792C83D0A100B2B7C6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704D30782C83D0A100B2B7C6 /* LocationManager.swift */; };
 		705456212C99D31700E680C6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 705456202C99D31700E680C6 /* Localizable.xcstrings */; };
 		705A66682C9A51C80006D62B /* arrow.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 705A66672C9A51C80006D62B /* arrow.usdz */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		702BBA562C8125460017C722 /* ARTourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTourView.swift; sourceTree = "<group>"; };
+		70410AAA2CCB1155009A0546 /* InterestPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPointView.swift; sourceTree = "<group>"; };
 		704D30782C83D0A100B2B7C6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		705456202C99D31700E680C6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		705A66672C9A51C80006D62B /* arrow.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = arrow.usdz; path = ../../../../../Downloads/arrow.usdz; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				70DC53312C7D432100F6A45A /* DistanceIndicatorView.swift */,
 				706004872C7EAA3F003AA384 /* TourProgressIndicatorView.swift */,
 				702BBA562C8125460017C722 /* ARTourView.swift */,
+				70410AAA2CCB1155009A0546 /* InterestPointView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				70BB354A2C71444500120FA6 /* SocketIOSensorDatasource.swift in Sources */,
 				70BB35592C71488600120FA6 /* Sensor.swift in Sources */,
 				70BB354C2C71445000120FA6 /* EstimoteSensorDatasource.swift in Sources */,
+				70410AAB2CCB1155009A0546 /* InterestPointView.swift in Sources */,
 				70EFA5F72C72A0A600A45190 /* ToursListScreen.swift in Sources */,
 				70BB35532C7146C000120FA6 /* TestSensorScreen.swift in Sources */,
 				704D30792C83D0A100B2B7C6 /* LocationManager.swift in Sources */,
